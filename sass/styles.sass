@@ -14,21 +14,30 @@ $violet: hsl(257, 40%, 49%)
     box-sizing: border-box
     font-size: 16px
 
+html, body, .page-wrapper
+    height: 100%
+
 body
     background: url(./../images/bg-mobile.svg) $violet
-    background-repeat:  no-repeat
-    margin: 20px 10%
+    background-size: cover
+    background-repeat: no-repeat
+   
+.page-wrapper
+    padding: 20px 10%
     display: flex
     flex-direction: column
-
+    justify-content: space-between
 .logo
     width: 125px
     margin-bottom: 65px
 .illustration
+    flex: 1
+.illustration img
     max-width: 100%
     margin-bottom: 3rem
 
-.build-community
+.build-community .wrapper
+    flex: 1
     display: flex
     flex-direction: column
     align-items: center
@@ -36,12 +45,12 @@ body
 h1
     color: white
     font-family: Poppins
-    font-weight: 700
+    font-weight: 400
     font-size: 1.5rem
     text-align: center
     margin-bottom: 1rem
 p
-    color: white
+    color: #eee
     font-family: Open Sans
     text-align: center
     margin-bottom: 1.5rem
@@ -58,19 +67,18 @@ button
     font-weight: 400
     font-family: Poppins
     margin-bottom: 1.3rem
+    box-shadow: 0 8px 5px rgba(54, 55, 55, 0.4)
+    outline: none
 footer
     padding: 1rem
     font-family: Poppins
-    display: flex
-    flex-direction: column
-    align-items: center
     text-align: center
 footer p, footer a
     font-size: 0.7rem
 
-footer .icons
+.icons
     padding: 15px
-footer .icons i
+.icons i
     border: white 0.5px solid
     border-radius: 50%
     width: 25px
@@ -79,3 +87,50 @@ footer .icons i
     padding: 6px
     color: white
     margin: 3px
+    text-align: center
+
+// Desktop screen
+@media screen and  (min-width: 850px)
+    body
+        background: url(./../images/bg-desktop.svg) $violet
+        background-size: cover
+    .page-wrapper
+        padding: 0 4%
+    .logo
+        width: 210px
+    .container-content
+        display: flex
+        flex-direction: row
+    .illustration div
+        flex: 1
+    .build-community
+        flex: 1
+        
+    .build-community .wrapper
+        justify-content: flex-start
+        padding: 4.7rem
+        align-items: flex-start
+        box-sizing: border-box
+    h1
+        font-size: 2.3rem
+        font-family: 'Poppins'
+        letter-spacing: 0.11rem
+        text-align: left
+        font-weight: 500
+    p
+        font-size: 1.1rem
+        text-align: left
+    button
+        font-size: 1rem
+        padding: 16px 65px
+        border-radius: 40px
+        
+    footer
+        margin-top: auto
+        text-align: right
+    .icons i
+        font-size: 1.6rem
+        padding: 0.5rem
+        width: 2.8rem
+        margin: 5px
+        
